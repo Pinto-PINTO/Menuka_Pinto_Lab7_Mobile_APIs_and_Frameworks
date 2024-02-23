@@ -96,7 +96,6 @@ app.get('/register', (req, res) => {
     res.render('register', { error: req.flash('error') });
 });
 
-// ---------
 app.get('/protected', (req, res) => {
     if (req.isAuthenticated()) {
         res.render('protected', { user: req.user });
@@ -104,12 +103,6 @@ app.get('/protected', (req, res) => {
         res.redirect('/login');
     }
 });
-// ---------
-
-app.get('/logout', (req, res) => {
-    req.logout(); 
-    res.redirect('/login'); 
-})
 
 app.post('/login', passport.authenticate('local', {
     successRedirect: '/protected',

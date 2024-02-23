@@ -66,6 +66,9 @@ exports.logoutUser = (req, res, next) => {
             req.flash('error', 'Internal Server Error');
             return res.redirect('/login');
         }
+        // redirect from protected page to login page
+        req.flash('success', 'User Successfully Logged Off');
+        res.redirect('/login');
     }
     )};
 

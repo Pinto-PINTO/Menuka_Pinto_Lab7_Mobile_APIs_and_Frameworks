@@ -13,6 +13,10 @@
         <p class="error"><%= error %></p>
     <% } %>
 
+    <% if (success && success.length > 0) { %>
+        <p class="success"><%= success %></p>
+    <% } %>
+
     <form action="/auth/login" method="POST">
         
         <label for="username">username:</label>
